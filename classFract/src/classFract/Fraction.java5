@@ -1,0 +1,60 @@
+package classFract;
+
+public class Fraction {
+    int n, d;
+
+    Fraction (int num, int den)
+    {
+        n = num;
+        d = den;
+    }
+
+    public String toString()
+    {
+        return n + "/" + d;
+    }
+
+    public boolean equals(Fraction b) 
+    { 
+    	if(n>b.n && d<b.d){ 
+    		return true;
+    	} 
+    	return false; 
+    } 
+    public String add(Fraction dr2) 
+    { 
+    	int n1=n*dr2.d; 
+    	int n2=dr2.n*d; 
+    	int d1=dr2.d*d; 
+    	n1+=n2; 
+    	return n1+"/"+d1; 
+    } 
+   
+    public String sub(Fraction dr2) { 
+    int n1=n*dr2.d; 
+    int n2=dr2.n*d; 
+    int d1=b.d*d; 
+    n1-=n2; 
+    return n1+"/"+d1; 
+    } 
+    
+    public Fraction mul(Fraction x) {
+        return new Fraction(n*x.n, d*x.d);
+    }
+    public Fraction div(Fraction x) {
+        return new Fraction(n*x.d, d*x.n);
+    }
+
+}
+
+public static void main(String[] args) { 
+	// TODO Auto-generated method stub 
+	Scanner sc = new Scanner(System.in); 
+
+	Fraction a=new Fraction(); 
+
+	a.n=sc.nextInt();
+	a.d=sc.nextInt(); 
+
+	System.out.println(a.red()); 
+	}
